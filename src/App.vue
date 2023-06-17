@@ -28,7 +28,7 @@ export default {
       return this.isDesktop ? 'NW.js & Vue' : 'Vue'
     }
   }
-};
+}
 </script>
 
 <style scoped>

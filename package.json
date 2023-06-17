@@ -23,6 +23,7 @@
   "devDependencies": {
     "@playwright/test": "^1.35.0",
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/nw.js": "^0.13.16",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/test-utils": "^2.3.2",
@@ -31,7 +32,6 @@
     "eslint-plugin-vue": "^9.11.0",
     "jsdom": "^22.1.0",
     "nw": "^0.77.0-sdk",
-    "nwjs-types": "^1.0.0",
     "prettier": "^2.8.8",
     "vite": "^4.3.9",
     "vitest": "^0.32.0",

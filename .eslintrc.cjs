@@ -11,6 +11,9 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-prettier/skip-formatting'
   ],
+  rules: {
+    semi: ['warn', 'never'],
+  },
   parserOptions: {
     ecmaVersion: 'latest'
   }

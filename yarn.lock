@@ -267,10 +267,12 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.3.1.tgz#e8a83f1aa8b649377bb1fb5d7bac5cb90e784dfe"
   integrity sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==
 
-"@types/node@^11.11.3":
-  version "11.15.54"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.15.54.tgz#59ed60e7b0d56905a654292e8d73275034eb6283"
-  integrity sha512-1RWYiq+5UfozGsU6MwJyFX6BtktcT10XRjvcAQmskCtMcW3tPske88lM/nHv7BQG1w9KBXI1zPGuu5PnNCX14g==
+"@types/nw.js@^0.13.16":
+  version "0.13.16"
+  resolved "https://registry.yarnpkg.com/@types/nw.js/-/nw.js-0.13.16.tgz#e3ce1e57a55f7259dc0d98614e4cf293ca0c8973"
+  integrity sha512-Cn8qmFxN2IOKTtgxFAQH4RpbfSytb91omUfWCiiYficA6iK+CZEwnqLAVhq18B/GIMGfokXMMY/c6r0JCwf2Dw==
+  dependencies:
+    "@types/node" "*"
 
 "@vitejs/plugin-vue@^4.2.3":
   version "4.2.3"
@@ -1800,13 +1802,6 @@ nw@^0.77.0-sdk:
     rimraf "^2.2.8"
     semver "^5.1.0"
     yargs "^3.2.1"
-
-nwjs-types@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/nwjs-types/-/nwjs-types-1.0.0.tgz#d939a74ac9db24fada11a37c3242a73544907dfa"
-  integrity sha512-lMOCPWuUIK5/g+3cPj/E1Z1dw+kjCpdT+7s9LqbY4AM9WMy76QOZ3Kk+c983GTKadkRrWazOKThhTUDgpl898A==
-  dependencies:
-    "@types/node" "^11.11.3"
 
 nwsapi@^2.2.4:
   version "2.2.5"
