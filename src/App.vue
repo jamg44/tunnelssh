@@ -4,23 +4,22 @@
 
     <div class="wrapper">
       <HelloWorld :msg="message" />
+      <button @click="getHosts">getHosts</button>
     </div>
   </header>
 
-  <div v-if="isDesktop" class="container">
-    <button @click="getHosts">getHosts</button>
-    <div v-if="error">
-      There was an error attempting to read from the file system.
-    </div>
-    <template v-if="hosts.length">
-      <div v-for="host in hosts" :key="host">
-        {{ host }}
-      </div>
-    </template>
-  </div>
-
   <main>
-    <TheWelcome />
+    <TheWelcome v-if="!hosts.length"/>
+    <div v-if="isDesktop">
+      <div v-if="error">
+        There was an error attempting to read from the file system.
+      </div>
+      <template v-if="hosts.length">
+        <div v-for="host in hosts" :key="host">
+          {{ host }}
+        </div>
+      </template>
+    </div>
   </main>
 </template>
 
@@ -55,6 +54,7 @@ export default {
           const sshConfigText = await fsPromises.readFile(`${homeDir}/.ssh/config`, 'utf-8')
           const lines = sshConfigText.split('\n')
           this.hosts = lines.filter(l => l.startsWith('Host') )
+          console.log(this.hosts)
         } catch (error) {
           this.hosts = []
           this.error = true

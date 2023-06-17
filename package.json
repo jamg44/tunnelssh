@@ -5,6 +5,17 @@
   "main": "http://localhost:4175",
   "node-remote": "http://localhost:4175",
   "chromium-args": "--enable-logging=stderr",
+  "windowComments": {
+    "show": "true|false - show/hide taskbar icon"
+  },
+  "window": {
+    "width": 1024,
+    "height": 720,
+    "min_width": 700,
+    "min_height": 500,
+    "icon": "public/icon.png",
+    "show_in_taskbar": false
+  },
   "scripts": {
     "dev": "concurrently --kill-others npm:dev:web npm:dev:desktop",
     "dev:web": "vite --port 4175",
