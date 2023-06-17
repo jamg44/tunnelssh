@@ -2,8 +2,11 @@
   "name": "tunnelssh",
   "version": "0.0.0",
   "private": true,
+  "main": "http://localhost:4175",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently --kill-others npm:dev:web npm:dev:desktop",
+    "dev:web": "vite --port 4175",
+    "dev:desktop": "wait-on -c waitOnConfig.json http-get://localhost:4175 && nw .",
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -21,11 +24,14 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/test-utils": "^2.3.2",
+    "concurrently": "^8.2.0",
     "eslint": "^8.39.0",
     "eslint-plugin-vue": "^9.11.0",
     "jsdom": "^22.1.0",
+    "nw": "^0.77.0-sdk",
     "prettier": "^2.8.8",
     "vite": "^4.3.9",
-    "vitest": "^0.32.0"
+    "vitest": "^0.32.0",
+    "wait-on": "^7.0.1"
   }
 }

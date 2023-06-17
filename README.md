@@ -1,40 +1,44 @@
 # tunnelssh
 
-This template should help get you started developing with Vue 3 in Vite.
+Another SSH Tunnel Manager.
 
-## Recommended IDE Setup
+## Contributing
+
+### Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+### Project Setup
 
 ```sh
 yarn
 ```
 
-### Compile and Hot-Reload for Development
+#### Compile and Hot-Reload for Development
 
 ```sh
 yarn run dev
 ```
 
-### Compile and Minify for Production
+This runs concurrently, yarn run dev:web, yarn run dev:desktop, desktop waits for web startup and then starts the app.
+
+#### Compile and Minify for Production
 
 ```sh
 yarn run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+#### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
 yarn run test:unit
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+#### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
 ```sh
 # Install browsers for the first run
@@ -53,7 +57,7 @@ yarn run test:e2e -- tests/example.spec.ts
 yarn run test:e2e -- --debug
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+#### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 yarn run lint
