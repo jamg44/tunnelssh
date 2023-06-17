@@ -7,6 +7,18 @@
     </div>
   </header>
 
+  <div v-if="isDesktop" class="container">
+    <button @click="getHosts">getHosts</button>
+    <div v-if="error">
+      There was an error attempting to read from the file system.
+    </div>
+    <template v-if="hosts.length">
+      <div v-for="host in hosts" :key="host">
+        {{ host }}
+      </div>
+    </template>
+  </div>
+
   <main>
     <TheWelcome />
   </main>
@@ -22,10 +34,32 @@ export default {
     HelloWorld,
     TheWelcome,
   },
+  data: function () {
+    return {
+      hosts: [],
+      error: false
+    }
+  },
   computed: {
     message: function () {
       console.log('this.isDesktop', this.isDesktop)
       return this.isDesktop ? 'NW.js & Vue' : 'Vue'
+    }
+  },
+  methods: {
+    getHosts: async function () {
+      if (this.isDesktop) {
+        const fsPromises = this.require('fs/promises')
+        const homeDir = this.require('os').homedir()
+        try {
+          const sshConfigText = await fsPromises.readFile(`${homeDir}/.ssh/config`, 'utf-8')
+          const lines = sshConfigText.split('\n')
+          this.hosts = lines.filter(l => l.startsWith('Host') )
+        } catch (error) {
+          this.hosts = []
+          this.error = true
+        }
+      }
     }
   }
 }
