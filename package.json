@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "main": "http://localhost:4175",
+  "chromium-args": "--enable-logging=stderr",
   "scripts": {
     "dev": "concurrently --kill-others npm:dev:web npm:dev:desktop",
     "dev:web": "vite --port 4175",
