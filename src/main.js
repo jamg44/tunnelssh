@@ -1,3 +1,5 @@
+// @ts-check
+
 import './assets/main.css'
 
 import { createApp } from 'vue'
@@ -14,3 +16,11 @@ app.use(createPinia())
 app.mount('#app')
 
 console.log('nw-flavor', process.versions['nw-flavor'])
+
+// Create a tray icon
+var tray = new nw.Tray({ title: 'Tray', icon: 'img/icon.png' });
+
+// Give it a menu
+var menu = new nw.Menu();
+menu.append(new nw.MenuItem({ type: 'checkbox', label: 'box1' }));
+tray.menu = menu;
